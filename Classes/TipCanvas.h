@@ -21,7 +21,7 @@
 	int boxWidth;
 	int boxHeight;
     
-	
+    
 	// Graphics
 	CGContextRef ctx_bitmap;
 	char* bitmap;
