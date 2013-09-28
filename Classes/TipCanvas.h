@@ -3,7 +3,7 @@
 //  TetrisGame
 //
 //  Created by Yanzhu Wen on 12/24/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 Yanzhu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,6 +20,7 @@
 	NSArray* TwoD_boxes;
 	int boxWidth;
 	int boxHeight;
+    
 	
 	// Graphics
 	CGContextRef ctx_bitmap;
