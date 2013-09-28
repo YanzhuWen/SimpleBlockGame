@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg936\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;\f1\fnil\fcharset0 LucidaGrande;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red37\green76\blue201;\red83\green83\blue83;}
+\margl1440\margr1440\vieww9000\viewh7200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Turn-based game logic\
+\
+Starting a new match\
+Managing turn-based state\
+Taking turn\
+\
+\
+Allan.\
+\
+Jake, UI kit. Twitter,  \
+\
+Alex, leaderboard, game center.\
+\
+iOS 5 beta:\
+   Xcode 4.2 and iOS SDK 5 beta 7\
+\
+WWDC 2011 Videos\
+Turn-Based Gaming with Game Center\
+Multiplayer Gaming with Game Center\
+Working with Game Center\
+\
+\
+\
+Ref Library\
+ Game Kit Gramework Reference\
+\
+Sample Code\
+  GKAuthentication\
+  GKTapper\
+\
+\
+Xcode 4.2  cannot be used to submit apps to iOS or Mac App Store.\
+\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs26 \cf0 The {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/library/prerelease/ios/documentation/GameKit/Reference/GKTurnBasedMatch_Ref/Reference/Reference.html#//apple_ref/occ/cl/GKTurnBasedMatch"}}{\fldrslt 
+\f2 \cf2 GKTurnBasedMatch}} class provides support for turn-based gaming, which allows games to create persistent matches whose state is stored in iCloud. Your game manages the state information for the match and determines which player must act to advance the state of the match.\
+\
+\pard\pardeftab720\sa200\ql\qnatural
+\cf0 The 
+\f2 \cf3 GKTurnBasedMatch
+\f1 \cf0  class allows your game to implement turn-based matches between sets of players on Game Center. A turn-based match uses a store-and-forward approach to share data between the participants. When a player participating in the match performs actions to advance the state of the match, your game uploads data to Game Center that defines the new state of the match and tells Game Center which player act next in the match. Later, when the next player launches your game, it downloads the match data from Game Center and continues the match. Players continue to take turns acting (based on whatever internal logic your game implements) until the match ends. A key advantage of turn-based matches is that a player may participate in multiple matches simultaneously.\
+\
+
+\f0 \'d6\'ae\'c7\'b0\'b5\'c4
+\f1 turn-based
+\f0 \'b5\'c4\'d3\'ce\'cf\'b7\'bf\'aa\'b7\'a2\'b9\'a4\'d7\'f7\'ce\'aa\'a3\'ba\
+1. \'c9\'e8\'bc\'c6\'bf\'cd\'bb\'a7\'b6\'cb\'a3\'af\'b7\'fe\'ce\'f1\'c6\'f7 \'b6\'cb\'bc\'dc\'b9\'b9\'a3\'ac \'d0\'ad\'d2\'e9\
+2. \'bf\'cd\'bb\'a7\'b6\'cb\'ca\'b5\'cf\'d6 \'d3\'ce\'cf\'b7\'bb\'f9\'b1\'be\'c2\'df\'bc\'ad\'a3\'ac \'b7\'fe\'ce\'f1\'c6\'f7\'b8\'ba\'d4\'f0\'c6\'a5\'c5\'e4\'a3\'ac\'b4\'a6\'c0\'ed\'d4\'da\'cf\'dfsession, \'b5\'c7\'c2\'bc\'a3\'ac\'bd\'f8\'c8\'eb\'d3\'ce\'cf\'b7\'b5\'c8\'c2\'df\'bc\'ad\
+
+\f1 \
+
+\f0 \'cc\'e1\'b9\'a9
+\f1  
+\f0 \'bf\'f2\'bc\'dc\'ca\'b5\'cf\'d6turn-based\'b5\'c4\'d3\'ce\'cf\'b7, \'d3\'ce\'cf\'b7\'bf\'aa\'b7\'a2\'d5\'df\'bf\'c9\'d2\'d4\'bb\'f9\'d3\'daiOS5\'b5\'c4game kit\'bf\'f2\'bc\'dc\'ba\'dc\'c7\'e1\'cb\'c9\'b5\'c4\'bf\'aa\'b7\'a2\'d2\'bb\'b8\'f6turn-based\'b5\'c4\'d3\'ce\'cf\'b7\
+1.\'bd\'e1\'ba\'cfiCloud\'b4\'e6\'d6\'fc\'d3\'ce\'cf\'b7\'ca\'fd\'be\'dd\'a3\'ac \'cc\'e1\'bd\'bb\'d3\'ce\'cf\'b7\'ca\'fd\'be\'dd\'b5\'bdiCloud, 
+\f1 \
+2. iCloud/GameCenter 
+\f0 \'b8\'ba\'d4\'f0\'c6\'a5\'c5\'e4\'a3\'ac\'d4\'da\'cf\'df
+\f1 session, 
+\f0 \'b5\'c7\'c2\'bc\'a3\'ac\'b4\'e6\'b4\'a2\'d3\'ce\'cf\'b7\'ca\'fd\'be\'dd
+\f1  
+\f0 \'b5\'c8\'b7\'fe\'ce\'f1\'c6\'f7\'b9\'a6\'c4\'dc\
+\'cb\'f9\'d2\'d4\'d3\'c3\'c1\'cbiOS5\'b5\'c4 game kit 
+\f1\fs56 GKTurnBasedMatch
+\f0\fs26  \'ba\'f3\
+\'d6\'bb\'d0\'e8\'d2\'aa \'d7\'a8\'d7\'a2\'d4\'da\'bf\'cd\'bb\'a7\'b6\'cb\'d0\'b4\'d3\'ce\'cf\'b7\'c2\'df\'bc\'ad\'be\'cd\'bf\'c9\'d2\'d4\'a3\'ac \'b8\'b4\'d4\'d3\'b5\'c4\'c6\'a5\'c5\'e4\'a3\'ac\'b7\'fe\'ce\'f1\'c6\'f7\'ba\'f3\'b6\'cb\'c2\'df\'bc\'ad\'be\'cd\'d6\'b1\'bd\'d3\'d3\'c9\'c6\'bb\'b9\'fb\'b5\'c4\'c0\'b4\'bd\'d3\'b9\'dc\'b4\'a6\'c0\'ed\'c1\'cb\'a1\'a3 \
+}

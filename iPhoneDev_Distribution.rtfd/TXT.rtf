@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg936\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green96\blue223;\red234\green234\blue234;\red101\green137\blue214;
+\red38\green38\blue38;\red236\green241\blue245;}
+\margl1440\margr1440\vieww28300\viewh15700\viewkind0
+\deftab720
+\pard\pardeftab720\sa320\ql\qnatural
+
+\f0\b\fs26 \cf2 \cb3 http://www.idev101.com/code/Distribution/build.html\
+\
+{\field{\*\fldinst{HYPERLINK "http://www.idev101.com/"}}{\fldrslt iPhone Development 101:}}
+\fs40 \cf0  {\field{\*\fldinst{HYPERLINK "http://www.idev101.com/code/Distribution/"}}{\fldrslt 
+\fs26 \cf2 Distribution:}} \uc0\u8232 \
+Building Your App for Distribution\
+\pard\pardeftab720\sa260\ql\qnatural
+
+\b0\fs26 \cf0 \cb1 To prepare your new iPhone app for distribution on the app store, you'll need to create a distribution build for it. You should already have created your distribution certificate and provisioning profile before starting. (If you haven't, log into the {\field{\*\fldinst{HYPERLINK "http://developer.apple.com/iphone/manage/overview/index.action"}}{\fldrslt 
+\b \cf2 Developer Program Portal}} to create them.)\
+1. In Xcode, select the app target and do 'get info' (
+\b \uc0\u8984 I
+\b0 ), then look at the Build tab.\uc0\u8232 
+\f1\fs24 {{\NeXTGraphic target.png \width2100 \height760 \noorient
+}¬}
+\f0\fs26 \
+2. Change the configuration to "Release". (Or duplicate the Release config and create a new config called "Distribution").\
+3. Set the Code Signing Identity to your distribution certificate. {\field{\*\fldinst{HYPERLINK "javascript:showMe('buildPanel.png',%20756,%20623)"}}{\fldrslt 
+\b \cf1 \cb4 Show me}}\
+4. Scroll down a bit further and set the 
+\b iOS Deployment Target
+\b0  to whatever minimum version of iOS you want to build for. {\field{\*\fldinst{HYPERLINK "javascript:showMe('deploymentTarget.png',%20756,%20459)"}}{\fldrslt 
+\b \cf1 \cb4 Show me}} (Be sure you've tested your app for this version. Some newer features of the iOS SDK aren't compatible with older versions of iOS.)\
+5. Close the info view. In the Xcode toolbar, change the target to "Device", and the active build configuration to "Release" (or "Distribution", if you created a new configuration). {\field{\*\fldinst{HYPERLINK "javascript:showMe('activeTarget.png',%20280,%20328)"}}{\fldrslt 
+\b \cf1 \cb4 Show me}}\
+6. Open the "Build Results" window (\uc0\u8593 \u8984 B) under the "Build" menu.\
+I like to "Clean All Targets" at this point before building the distribution relrease. (It's in the Build menu.)\
+7. Click "Build", and watch the build progress in the results window. Make sure it completes all the way through to the "Code Sign" step. (If the build fails, or you don't get to the final Code Sign step, something's gone wrong. Start over and be sure you've selected the proper sdk/build configuration/distribution certificates.) {\field{\*\fldinst{HYPERLINK "javascript:showMe('succeeded.png',%20605,%20440)"}}{\fldrslt 
+\b \cf1 \cb4 Show me}}\
+8. Close the build results window. In the XCode "Products" folder, look for YourAppName.app. Control-click on the app name and select "Reveal In Finder". {\field{\*\fldinst{HYPERLINK "javascript:showMe('revealInFinder.png',%20352,%20144)"}}{\fldrslt 
+\b \cf1 \cb4 Show me}}\
+9. In the finder, control-click on the app name and choose "Compress" to create a zip file of it.\
+10. Drag the resulting zip file out to your desktop or somewhere you can easily find it.\
+Now you're ready to {\field{\*\fldinst{HYPERLINK "http://www.idev101.com/code/Distribution/checklist.html"}}{\fldrslt 
+\b \cf2 submit the app to the app store}}.\
+\
+\
+\pard\pardeftab720\sl360\ql\qnatural
+
+\fs24 \cf5 \cb6 SUCCESS!\
+\'a0\
+I'm using CorePlot as the example since that is what I had issues with.\
+\'a0\
+Ok here's what I did:\
+1. Remove the reference to the CorePlot project from my project.\
+2. Follow the instructions in the Transition Guide Create a new workspace. From the finder, add in my projects my project's .xcodeproj file to the workspace. Then add the CorePlot's .xcodeproj file to the workspace\
+3. In my projects target's build rule, re-add the libCorePlot-CocoaTouch.a as a dependancy.\
+4. In CorePlot's Project, make sure skip install is set to 'Yes'\
+5. In CorePlot's target, CorePlot-CocoaTouch, make sure skip install is 'Yes'. In the Build Phase settings, remove all headers from the Copy Headers section (this was the key).\
+6. Because I do not have DoxyGen installed, I deleted the Documentation target.\
+\'a0\
+Then select your project in the workspace, select Product->archive, and voila, you now have a proper Archive that can be validated!\
+\'a0\
+\
+\'a0\
+Message was edited by kak on 3/11/11 at 12:25 PM}
